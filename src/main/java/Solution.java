@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Solution {
     public double myPow(double x, int n) {
         if(x == 1.0 && n != 0){
@@ -21,21 +18,19 @@ public class Solution {
 
         double poweredX = x;
         int cutN = n;
-        List<Double> leftOvers = new ArrayList<>();
-        leftOvers.add(dealingWithMinInteger);
+        double result = dealingWithMinInteger;
+
         int leftOver = 0;
         while (cutN > 0){
             leftOver = cutN % 2;
             if(leftOver != 0){
-                leftOvers.add(poweredX);
+                result *= poweredX;
             }
             poweredX *= poweredX;
             cutN /= 2;
         }
-            double result = 1.0;
-        for (int i = 0; i < leftOvers.size(); i++) {
-            result *= leftOvers.get(i);
-        }
+
+
 
         return result;
     }
