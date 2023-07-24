@@ -34,4 +34,15 @@ public class SolutionTest {
 
         Assert.assertEquals(expected, actual, delta);
     }
+
+    @Test
+    public void myPowTest4() {
+        double x = 0.00001;
+        int n = 2147483647;
+        double expected = 0.0;
+        double actual = new Solution().myPow(x, n);
+        double delta = 1e-5;
+
+        Assert.assertEquals(expected, actual, delta);
+    }
 }
