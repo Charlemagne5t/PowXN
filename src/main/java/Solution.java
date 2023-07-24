@@ -24,7 +24,7 @@ public class Solution {
         List<Double> leftOvers = new ArrayList<>();
         leftOvers.add(dealingWithMinInteger);
         int leftOver = 0;
-        while (cutN > 2){
+        while (cutN > 0){
             leftOver = cutN % 2;
             if(leftOver != 0){
                 leftOvers.add(poweredX);
@@ -32,17 +32,11 @@ public class Solution {
             poweredX *= poweredX;
             cutN /= 2;
         }
-            double result = power(poweredX, cutN);
+            double result = 1.0;
         for (int i = 0; i < leftOvers.size(); i++) {
             result *= leftOvers.get(i);
         }
 
         return result;
-    }
-    private double power(double x, int n){
-        if (n == 0){
-            return 1;
-        }
-        return x * power(x , n -1);
     }
 }
